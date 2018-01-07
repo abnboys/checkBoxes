@@ -43,7 +43,8 @@ class CheckBox: UIButton {
     }
     
     
-    //// Add your own Method for Configure this Functonality... by using addTarget Method
+    //// Add your own Method for Configure this Functonality... by using addTarget Method...
+    
     
     @objc func onClickOfCheckBoxButton(sender: UIButton) {
         
