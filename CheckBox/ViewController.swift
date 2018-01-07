@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet var cb: CheckBox!
     
     
+    @IBOutlet var signupbutton: UIButton!
     
     @IBOutlet var check1: UIButton!
     @IBOutlet var check2: UIButton!
@@ -29,6 +30,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        signupbutton.isEnabled = false
+        signupbutton.backgroundColor = isChecked ? UIColor.green : UIColor.blue
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,26 +48,34 @@ class ViewController: UIViewController {
     @IBAction func onCheck1(_ sender: UIButton) {
         
         
+        
             if isChecked {
                 
                 isChecked = !isChecked
 //                sender.setImage(checkedImg, for: .normal)
+                signupbutton.backgroundColor = isChecked ? UIColor.green : UIColor.blue
+
             } else {
                 
                 isChecked = !isChecked
 //                sender.setImage(unCheckedImg, for: .normal)
+                signupbutton.backgroundColor = isChecked ? UIColor.green : UIColor.blue
 
             }
         
         if isChecked {
             
             sender.setImage(checkedImg, for: .normal)
-            
             print("Enable Sign Up")
+            signupbutton.isEnabled = true
+
+            
         } else {
             
             sender.setImage(unCheckedImg, for: .normal)
             print("Disable Sign Up")
+            signupbutton.isEnabled = false
+
 
         }
             
